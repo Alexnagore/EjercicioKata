@@ -13,8 +13,8 @@ class ListaCompraTest extends TestCase
     public function addProductReturnsListWithProduct(): void
     {
         $listaCompra = new ListaCompra();
-        $result = $listaCompra->list("Pan");
-        $this->assertEquals("Pan", $result);
+        $response = $listaCompra->list("añadir pan");
+        $this->assertEquals("pan", $response);
     }
 
 }

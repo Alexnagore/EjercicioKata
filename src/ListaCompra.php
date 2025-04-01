@@ -6,6 +6,7 @@ class ListaCompra
 {
     public function list(string $string): string
     {
-        return $string;
+        $response = explode(" " , $string);
+        return $response[1];
     }
 }
