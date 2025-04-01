@@ -20,11 +20,22 @@ class ListaCompraTest extends TestCase
     /**
      * @test
      */
-    public function addProductAndNoNumberReturnListWithProductAndNumber(): void
+    public function addProductAndNumberReturnsListWithProductAndNumber(): void
     {
         $listaCompra = new ListaCompra();
         $response = $listaCompra->list("añadir pan 2");
         $this->assertEquals("pan x2", $response);
+    }
+
+    /**
+     * @test
+     */
+    public function addProductAlreadyInListReturnsListWithProductAndSumNumbers(): void
+    {
+        $listaCompra = new ListaCompra();
+        $listaCompra->list("añadir pan 2");
+        $response = $listaCompra->list("añadir pan 1");
+        $this->assertEquals("pan x3", $response);
     }
 
 
