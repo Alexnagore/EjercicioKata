@@ -38,5 +38,17 @@ class ListaCompraTest extends TestCase
         $this->assertEquals("pan x3", $response);
     }
 
+    /**
+     * @test
+     */
+    public function addTwoProductsReturnsListWithBothProducts(): void
+    {
+        $listaCompra = new ListaCompra();
+        $listaCompra->list("añadir pan 2");
+        $response = $listaCompra->list("añadir sal 3");
+        $this->assertEquals("pan x4, sal x3", $response);
+
+    }
+
 
 }
