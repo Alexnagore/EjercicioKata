@@ -4,8 +4,8 @@ namespace AlexNagore\EjercicioKata;
 
 class ListaCompra
 {
-
-    public function __construct()
+    public function list(string $string): string
     {
+        return $string;
     }
 }
